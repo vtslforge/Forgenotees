@@ -5,15 +5,21 @@ import add from "../src/assets/add.png";
 
 const Home = () => {
   const [notesContent, setnotesContent] = useState("second asdf");
+  const [noteContent, setnoteContent] = useState("Start writing your note..");
 
   return (
-    
     <div className="bg-background h-screen w-screen">
-      <div className="h-100 w-100 z-20 border-2 border-amber-300 absolute translate-x-100 translate-y-100"></div> 
-      <Navbar />
+      <div className="h-1/3 w-1/3  z-20 border-2 border-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl p-3 flex flex-col gap-3 ">
+        <h1 className="poppins-regular text-2xl">Title</h1>
+        <input className="poppins-regular focus:outline-none h-1/10" type="text" placeholder="Enter Title"></input>
+        <h1 className="poppins-regular text-2xl">Note Content</h1>
+        <textarea className="poppins-regular h-full flex flex-row focus:outline-none" type="text" placeholder={noteContent}></textarea>
+        <button className="border-2 border-foreground p-2 rounded-2xl h-10 w-15 right-0 absolute -bottom-15 flex justify-center items-center poppins-regular">Add</button>    
+      </div>
       
+      <Navbar />
+
       <div>
-        
         <h1 className="text-2xl my-3 mx-10 poppins-regular opacity-90">
           Your Notes
         </h1>
